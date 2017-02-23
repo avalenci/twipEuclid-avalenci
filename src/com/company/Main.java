@@ -8,9 +8,10 @@ public class Main {
         int n1 = input.nextInt();
         int n2 = input.nextInt();
         int it = Euclid.iterative(n1, n2);
-        int re = Euclid.recursive(n1, n2);
-        if (it == re) {
+        //int re = Euclid.recursive(n1, n2);
+        System.out.println(it);
+        /*if (it == re) {
             System.out.println(it);
-        }
+        } */
     }
 }
