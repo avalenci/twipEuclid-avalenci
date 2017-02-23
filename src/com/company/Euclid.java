@@ -9,10 +9,16 @@ public class Euclid {
         }
         else {
             small = n2;
-            big = n2;
+            big = n1;
         }
         if (big % small == 0)
             return small;
+        int count = 2;
+        while (true) {
+            if (big % (int)(small/count) == 0)
+                return small/count;
+            count++;
+        }
     }
     /*public static int recursive(int n1, int n2) {
 
