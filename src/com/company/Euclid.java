@@ -21,7 +21,7 @@ class Euclid {
             count++;
         }
     }
-    public static int recursive(int s, int b, int c) {
+    static int recursive(int s, int b, int c) {
         if (c == 0) {
             if (s == 0)
                 return b;
