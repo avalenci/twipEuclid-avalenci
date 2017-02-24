@@ -15,7 +15,7 @@ public class Euclid {
             return small;
         int count = 2;
         while (true) {
-            if (big % (int)(small/count) == 0)
+            if (small % count == 0 && big % (small/count) == 0)
                 return small/count;
             count++;
         }
