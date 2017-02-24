@@ -1,26 +1,42 @@
 package com.company;
 
-public class Euclid {
-    public static int iterative(int n1, int n2) {
-        int small, big;
-        if (n1 < n2) {
-            small = n1;
-            big = n2;
+class Euclid {
+    static int iterative(int s, int b) {
+        if (s == 0)
+            return b;
+        else if (b == 0)
+            return s;
+        int temp;
+        if (b < s) {
+            temp = s;
+            s = b;
+            b = temp;
         }
-        else {
-            small = n2;
-            big = n1;
-        }
-        if (big % small == 0)
-            return small;
+        if (b % s == 0)
+            return s;
         int count = 2;
         while (true) {
-            if (small % count == 0 && big % (small/count) == 0)
-                return small/count;
+            if (s % count == 0 && b % (s/count) == 0)
+                return s/count;
             count++;
         }
     }
-    /*public static int recursive(int n1, int n2) {
-
-    } */
+    public static int recursive(int s, int b, int c) {
+        if (c == 0) {
+            if (s == 0)
+                return b;
+            else if (b == 0)
+                return s;
+            else if (b < s)
+                return recursive(b, s, c + 1);
+            else
+                return recursive(s, b, c + 1);
+        }
+        else {
+            if (b%s != 0)
+                return recursive(b % s, s, c);
+            else
+                return s;
+        }
+    }
 }
